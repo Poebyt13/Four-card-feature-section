@@ -1,0 +1,147 @@
+
+:root {
+    /* Primary Colors */
+    --primary-red: hsl(0, 78%, 62%);
+    --primary-cyan: hsl(180, 62%, 55%);
+    --primary-orange: hsl(34, 97%, 64%);
+    --primary-blue: hsl(212, 86%, 64%);
+
+    /* Neutral Colors */
+    --neutral-very-dark-blue: hsl(234, 12%, 34%);
+    --neutral-grayish-blue: hsl(229, 6%, 66%);
+    --neutral-very-light-gray: hsl(0, 0%, 98%);
+}
+
+
+*{
+    font-family:"Poppins", sans-serif;;
+}
+
+body{
+    padding: 3rem;
+    min-height: 100vh;
+    background-color: var(--neutral-very-light-gray);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+header{
+    display: inline;
+    text-align: center;
+}
+
+header h2{
+    transition-duration: .5s;
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--neutral-very-dark-blue);
+}
+
+header h1{
+    color: var(--neutral-very-dark-blue);
+    transition-duration: .5s;
+}
+
+header p{
+    margin-top: .9rem;
+    font-size: .9rem;
+    color: var(--neutral-grayish-blue);
+}
+
+article{
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section{
+    transition-duration: .5s;
+    max-width: 23rem;
+    height: 15rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px -20px black;
+    position: relative;
+}
+
+section::before {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: red; 
+}
+
+.card1::before{
+    background-color: var(--primary-cyan);
+}
+.card2__1::before{
+    background-color: var(--primary-red);
+}
+.card2__2::before{
+    background-color: var(--primary-orange);
+}
+.card3::before{
+    background-color: var(--primary-blue);
+}
+
+.card2{
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+}
+
+section h4{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--neutral-very-dark-blue);
+}
+section p{
+    margin-top: .5rem;
+    color: var(--neutral-grayish-blue);
+    font-size: .9rem;
+}
+
+section img{
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    margin: 0 2rem 2rem 0;
+}
+
+.header__p--mobile{
+    opacity: 0;
+    position: absolute;
+}
+
+@media only screen and (max-width : 520px){
+
+    header h2{
+        font-size: 1.3rem;
+    }
+    header h1{
+        font-size: 1.35rem
+    }
+    .header__p--desktop{
+        position: absolute;
+        opacity: 0;
+    }
+
+    .header__p--mobile{
+        opacity: 1;
+        position: static;
+    }
+
+
+}
